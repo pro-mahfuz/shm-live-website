@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>SHM GOLD</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <style>
+            .loadBG{
+                background-image: url('file:///C:/laragon/www/qfjbullion-live-website/public/images/bg4.jpeg');
+                background-size:cover;
+                background-position:center;
+                background-repeat:no-repeat;
+                min-height:100vh;
+                width:100%;
+                overflow-x:hidden;
+                padding:20px 0;
+            }
+
+            .loadLOGO{
+                display:block;
+                width:300px;
+                height:auto;
+                margin:20px auto;
+            }
+
+            
+
+            /* Images */
+            img{
+                max-width:100%;
+                height:auto;
+            }
+
+            /* Card */
+            .card{
+                border-radius:10px;
+            }
+
+            /* Desktop Fonts */
+            #gold-buy-price,
+            #gold-sell-price,
+            #gold-920-gm-price,
+            #gold-9999-gm-price,
+            #gold-9999-price,
+            #gold-995-price,
+            #gold-ttb-price{
+                font-size:2rem;
+                font-weight:bold;
+            }
+
+            .card-title{
+                font-size:1.6rem;
+            }
+
+            .card-text{
+                margin-bottom:0;
+            }
+
+            @media (min-width: 1400px) {
+                .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                    max-width: 1700px !important;
+                }
+            }
+
+            /* Tablet */
+            @media(max-width:992px){
+
+                .loadLOGO{
+                    max-width:170px;
+                }
+
+                .fs-2{
+                    font-size:1.3rem!important;
+                }
+
+                .fs-3{
+                    font-size:1.1rem!important;
+                }
+
+                .fs-4{
+                    font-size:1rem!important;
+                }
+
+                .fs-5{
+                    font-size:.95rem!important;
+                }
+
+            }
+
+            /* Mobile */
+            @media(max-width:768px){
+
+                body{
+                    display:block;
+                }
+
+                .container{
+                    padding:10px;
+                }
+
+                .loadBG{
+                    padding:10px 0;
+                }
+
+                .loadLOGO{
+                    max-width:120px;
+                    margin-bottom:10px;
+                }
+
+                h1{
+                    font-size:1.5rem;
+                }
+
+                .fs-2{
+                    font-size:1.15rem!important;
+                }
+
+                .fs-3{
+                    font-size:.95rem!important;
+                }
+
+                .fs-4{
+                    font-size:.90rem!important;
+                }
+
+                .fs-5{
+                    font-size:.80rem!important;
+                }
+
+                .card-body{
+                    padding:8px!important;
+                }
+
+                .card-title{
+                    font-size:.9rem!important;
+                }
+
+                .card-text{
+                    font-size:.9rem!important;
+                }
+
+                #gold-buy-price,
+                #gold-sell-price,
+                #gold-920-gm-price,
+                #gold-9999-gm-price,
+                #gold-9999-price,
+                #gold-995-price,
+                #gold-ttb-price{
+                    font-size:1.1rem!important;
+                }
+
+                .row{
+                    margin-bottom:8px;
+                }
+
+                img{
+                    width:70%!important;
+                }
+
+            }
+
+            /* Small Mobile */
+            @media(max-width:480px){
+
+                .loadLOGO{
+                    max-width:13rem;
+                }
+
+                h1{
+                    font-size:1.2rem;
+                }
+
+                .fs-2{
+                    font-size:1rem!important;
+                }
+
+                .fs-3{
+                    font-size:.80rem!important;
+                }
+
+                .fs-4{
+                    font-size:.75rem!important;
+                }
+
+                .fs-5{
+                    font-size:.70rem!important;
+                }
+
+                #gold-buy-price,
+                #gold-sell-price,
+                #gold-920-gm-price,
+                #gold-9999-gm-price,
+                #gold-9999-price,
+                #gold-995-price,
+                #gold-ttb-price{
+                    font-size:1rem!important;
+                }
+
+                img{
+                    width:80%!important;
+                }
+
+            }
+        </style>
+    </head>
+
+    <body class="vw-100 d-flex align-items-center loadBG">
+    
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12 col-lg-6 text-center mb-3">
+                <div class="row">
+                    <div class="col-lg-12" style="background-color: #000000; background-size: cover;border-radius: 15px; border: 1px solid #AC8005;">
+                        <img src="/images/logo.jpeg" class="loadLOGO" alt="SHM GOLD">
+                        <h1 class="text-white">SPOT RATES</h1>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                        <div class="card-body p-2">
+                            <h5 class="card-title fs-2" style="color: #AC8005;"><span style="color: #AC8005; font-weight:bold;border-radius: .125rem">$</span>SELL oz</h5>
+                            <p class="card-text text-white fs-1" style="font-weight:bold;" id="gold-sell-price">0000.00</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card" style="background-color: #000000; background-size: cover;border: 1px solid #AC8005;">
+                        <div class="card-body p-2">
+                            <h5 class="card-title fs-2" style="color: #AC8005;"><span style="color: #AC8005; font-weight:bold;border-radius: .125rem">$</span>BUY oz</h5>
+                            <p class="card-text text-white fs-1" style="font-weight:bold;" id="gold-buy-price">0000.00</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    
+                    <h1 class="text-white fs-4">Mob: +971 55 762 3234</h1>
+                    <h1 class="text-white fs-4">Tel: +971 04 289 8941</h1>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row mb-md-5">
+                    <div class="col-6 d-flex">
+                        <div class="card w-100 h-100" style="background-color:#000000;border:1px solid #AC8005;">
+                            <div class="card-body px-2 py-2 d-flex flex-column justify-content-center">
+                                <div class="fs-6 fw-bold" id="day-display" style="color:#AC8005;"></div>
+                                <div class="fs-3 text-white fw-bold" id="date-display"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex">
+                        <div class="card w-100 h-100" style="background-color:#000000;border:1px solid #AC8005;">
+                            <div class="card-body px-2 py-2 d-flex align-items-center justify-content-center">
+                                <div class="text-center text-white fs-2 fw-bold" id="time-display"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-6 text-center px-0 py-2">
+                                        <p class="card-text fs-4 fw-bold" style="color: #AC8005;">METALS</p>
+                                    </div>
+                                    <div class="col-2 text-center px-0 py-2">
+                                        <p class="card-text fs-4 fw-bold" style="color: #AC8005;">WEIGHT</p>
+                                    </div>
+                                    <div class="col-4 text-center px-0 py-2">
+                                        <p class="card-text fs-4 fw-bold" style="color: #AC8005;">PRICE (AED)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+                                <div class="row p-0 m-0">
+                                    <div class="col-2 d-flex align-items-center justify-content-center p-1">
+                                        <img src="/images/99991gr.png" alt="" style="width:40%;">
+                                    </div>
+                                    <div class="col-4 px-0 py-2 d-flex align-items-center">
+                                        <p class="card-text text-white fs-3 fw-bold"> GOLD 9999</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center justify-content-center px-0 py-2" style="border-left: 1px solid #AC8005; border-right: 1px solid #AC8005;">
+                                        <p class="card-text text-white fs-3 fw-bold">1 GM</p>
+                                    </div>
+                                    <!--<div class="col-2 text-center p-0">-->
+                                    <!--    <p class="card-text  fs-3 fw-bold">AED</p>-->
+                                    <!--</div>-->
+                                    <div class="col-4 d-flex align-items-center justify-content-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id="gold-9999-gm-price">00000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+                                <div class="row p-0 m-0">
+                                    <div class="col-2 d-flex align-items-center justify-content-center p-1">
+                                        <img src="/images/10tola.png" alt="" style="width:40%;">
+                                    </div>
+                                    <div class="col-4 px-0 py-2 d-flex align-items-center">
+                                        <p class="card-text text-white fs-3 fw-bold" id=""> TEN TOLA</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center justify-content-center px-0 py-2" style="border-left: 1px solid #AC8005; border-right: 1px solid #AC8005;">
+                                        <p class="card-text text-white fs-3 fw-bold" id="">1 TTB</p>
+                                    </div>
+                                    <!--<div class="col-2 text-center p-0">-->
+                                    <!--    <p class="card-text  fs-3 fw-bold" id="">AED</p>-->
+                                    <!--</div>-->
+                                    <div class="col-4 d-flex align-items-center justify-content-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id="gold-ttb-price">000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+
+                                <div class="row p-0 m-0">
+                                    <div class="col-2 d-flex align-items-center justify-content-center p-1">
+                                        <img src="/images/99991kilo.png" alt="" style="width:40%;">
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id=""> GOLD 9999</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center justify-content-center px-0 py-2" style="border-left: 1px solid #AC8005; border-right: 1px solid #AC8005;">
+                                        <p class="card-text text-white fs-3 fw-bold" id="">1 KG</p>
+                                    </div>
+                                    <!--<div class="col-2 text-center p-0">-->
+                                    <!--    <p class="card-text  fs-3 fw-bold" id="">AED</p>-->
+                                    <!--</div>-->
+                                    <div class="col-4 d-flex align-items-center justify-content-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id="gold-9999-price">00000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-1 mb-2">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+
+                                <div class="row p-0 m-0">
+                                    <div class="col-2 d-flex align-items-center justify-content-center p-1">
+                                        <img src="/images/9951kilo.png" alt="" style="width:35%;">
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id=""> KILO BAR 995</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center justify-content-center px-0 py-2" style="border-left: 1px solid #AC8005; border-right: 1px solid #AC8005;">
+                                        <p class="card-text text-white fs-3 fw-bold" id="">1 KG</p>
+                                    </div>
+                                    <!--<div class="col-2 text-center p-0">-->
+                                    <!--    <p class="card-text  fs-3 fw-bold" id="">AED</p>-->
+                                    <!--</div>-->
+                                    <div class="col-4 d-flex align-items-center justify-content-center px-0 py-2">
+                                        <p class="card-text text-white fs-3 fw-bold" id="gold-995-price">000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="card" style="background-color: #000000;background-size: cover;border: 1px solid #AC8005;">
+                            <div class="card-body p-0">
+                                <div class="row p-0 m-0">
+                                    <div class="col-2 d-flex align-items-center justify-content-center p-1">
+                                        <img src="/images/jew1gr.png" alt="" style="width:50%;">
+                                    </div>
+                                    <div class="col-4 px-0 py-2 d-flex align-items-center">
+                                        <p class="card-text text-white fs-3 fw-bold"> GOLD SCP</p>
+                                    </div>
+                                    <div class="col-2 px-0 py-2 d-flex align-items-center justify-content-center" style="border-left: 1px solid #AC8005; border-right: 1px solid #AC8005;">
+                                        <p class="card-text text-white fs-3 fw-bold">1 GM</p>
+                                    </div>
+                                    <!--<div class="col-2 text-center p-0">-->
+                                    <!--    <p class="card-text  fs-3 fw-bold">AED</p>-->
+                                    <!--</div>-->
+                                    <div class="col-4 px-0 py-2 d-flex align-items-center justify-content-center">
+                                        <p class="card-text text-white fs-3 fw-bold" id="gold-920-gm-price">00000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="text-center text-white fs-4" style="font-size: 80px;">SHM GOLD & JEWELLERY LLC</h1>
+            <h1 class="text-center text-white fs-4 mt-1"><strong>Address: </strong>Shop No: 5, Alothmany BLDG-Al Daghaya-2, Opp. Lito Palace,<br> Dubai - UAE</h1>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        const source = new EventSource("/updates");
+
+        source.onmessage = function(event) {
+
+            const data = JSON.parse(event.data);
+
+            document.getElementById("day-display").innerHTML =data.day;
+            document.getElementById("date-display").innerHTML =data.date;
+            document.getElementById("time-display").innerHTML =data.time;
+            document.getElementById("gold-sell-price").innerHTML =data.value;
+            document.getElementById("gold-buy-price").innerHTML =data.value+.99;
+
+            var sellGoldPrice = data.value - 0.37;
+
+            if (sellGoldPrice) {
+                var buyGoldPrice = parseFloat(sellGoldPrice) + 0.91;
+                var baseCalc = (buyGoldPrice * 3.674) / 31.1035;
+
+                var gold_920_gm = (baseCalc * 0.92) + 1;
+                var gold_9999_gm = (baseCalc * 0.9999) + 7;
+                var gold_ttb = (baseCalc * 116.64) + 100;
+                var gold_995 = baseCalc * 0.995 * 1000;
+                var gold_9999 = baseCalc * 0.9999 * 1000;
+
+                document.getElementById("gold-buy-price").textContent = buyGoldPrice.toFixed(2);
+                document.getElementById("gold-sell-price").textContent = sellGoldPrice.toFixed(2);
+                document.getElementById("gold-920-gm-price").textContent = gold_920_gm.toFixed(2);
+                document.getElementById("gold-9999-gm-price").textContent = gold_9999_gm.toFixed(2);
+                document.getElementById("gold-ttb-price").textContent = gold_ttb.toFixed(2);
+                document.getElementById("gold-995-price").textContent = gold_995.toFixed(2);
+                document.getElementById("gold-9999-price").textContent = gold_9999.toFixed(2);
+            } else {
+                document.getElementById("gold-price").textContent = "Error fetching price";
+            }
+        };
+
+        source.onerror = function() {
+            console.log("SSE connection error");
+        };
+
+    </script>
+
+    
+</body>
+</html>
