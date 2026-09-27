@@ -86,5 +86,5 @@ app.get("/updates", (req, res) => {
 });
 
 app.listen(9073, "0.0.0.0", () => {
-    console.log("Server running on port 9040");
+    console.log("Server running on port 9073");
 });
