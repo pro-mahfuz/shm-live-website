@@ -85,6 +85,6 @@ app.get("/updates", (req, res) => {
 
 });
 
-app.listen(9040, "0.0.0.0", () => {
+app.listen(9073, "0.0.0.0", () => {
     console.log("Server running on port 9040");
 });
